@@ -1,6 +1,8 @@
-/*  Theme Name: TTL Events theme
-    Description: Theme for TTL events.
+/*  Theme Name: WP Timber Theme
+    Description: Theme with twig templates and Laravel mix for frontend assets.
     Version: 1.0.0
     Author: riku.kestila@vincit.fi
+    Text Domain: wordpress-timber-theme-base
 */
-@import url('assets/build/css/all.min.css');
+
+/* This file is deliberately blank. It is not included by the theme. Do not write anything into this file. */
