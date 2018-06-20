@@ -7,16 +7,30 @@
     "watch-poll": "npm run watch -- --watch-poll",
     "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
     "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "admin-dev": "npm run admin-development",
+    "admin-development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.admin.mix.js",
+    "admin-watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.admin.mix.js",
+    "admin-watch-poll": "npm run watch -- --watch-poll",
+    "admin-hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.admin.mix.js",
+    "admin-prod": "npm run admin-production",
+    "admin-production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.admin.mix.js",
+    "phpcs": "./vendor/bin/phpcs --extensions=php -n -p -s --colors --ignore=/vendor ./",
+    "test": "npm run phpcs && npm run lint:js",
+    "prepush": "npm run test"
+
   },
   "devDependencies": {
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.0",
+    "eslint-loader": "^1.9.0",
     "axios": "^0.18",
     "bootstrap": "^4.0.0",
     "cross-env": "^5.1",
     "jquery": "^3.2",
     "laravel-mix": "^2.0",
     "lodash": "^4.17.10",
-    "popper.js": "^1.12",
+    "popper.js": "^1.71",
     "vue": "^2.5.7"
   },
   "dependencies": {}
