@@ -14,9 +14,9 @@ use Timber\User;
 
 $data = Timber::get_context();
 $data['posts'] = Timber::get_posts();
-if (isset($wp_query->query_vars['author'])){
-	$author = new User($wp_query->query_vars['author']);
-	$data['author'] = $author;
-	$data['title'] = 'Author Archives: ' . $author->name();
+if (isset($wp_query->query_vars['author'])) {
+  $author = new User($wp_query->query_vars['author']);
+  $data['author'] = $author;
+  $data['title'] = 'Author Archives: ' . $author->name();
 }
 Timber::render(array('pages/author.twig', 'pages/archive.twig'), $data);

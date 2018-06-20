@@ -7,4 +7,5 @@
  * @subpackage  Timber
  */
 use Timber\Timber;
+
 Timber::render(array('pages/sidebar.twig'), $data);
